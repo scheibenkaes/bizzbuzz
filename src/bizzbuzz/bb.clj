@@ -13,7 +13,7 @@
     (if (empty? filtered) n (join "" filtered))))
 
 (defn bb-until [n]
-  (let [r (rest (range n))]
+  (let [r (rest (range (inc n)))]
     (map bizzbuzz r)))
 
 (defn bb [n]

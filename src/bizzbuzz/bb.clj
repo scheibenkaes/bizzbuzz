@@ -16,7 +16,9 @@
   (let [r (rest (range (inc n)))]
     (map bizzbuzz r)))
 
+(def *max-num* 1000)
+
 (defn bb [n]
-  (let [max-n (min n 1000)]
-    (bb-until max-n)))
+  (let [min-n (min n *max-num*)]
+    (bb-until min-n)))
 

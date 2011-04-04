@@ -11,7 +11,7 @@
 (defn bizzbuzz [n]
   (let [bb (list (bizz n) (buzz n))
         filtered (filter #(not (nil? %1)) bb)]
-    (if (empty? filtered) n (interleave "" filtered))))
+    (if (empty? filtered) n (join "" filtered))))
 
 (defn bb-until [n]
   (let [r (rest (range n))]

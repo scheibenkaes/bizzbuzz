@@ -23,15 +23,16 @@
   (unordered-list bbs))
 
 (defn until [n]
-  (html5
-    [:head [:title (str "BizzBuzz bis " n)]]
-    [:body
-     [:div (to-ul (bb n))]]))
+  (let [number (try (Integer/parseInt n) (catch Exception e 100))]
+    (html5
+      [:head [:title (str "BizzBuzz bis " n)]]
+      [:body
+       [:div (to-ul (bb number))]])))
 
 (defroutes 
   main-routes
   (GET "/" [] (max-form))
-  (GET "/until" [number] (until (Integer/parseInt number)))
+  (GET "/until" [number] (until number))
   (not-found "Huh?"))
 
 (def run-web 

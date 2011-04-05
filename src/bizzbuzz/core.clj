@@ -1,6 +1,6 @@
 (ns bizzbuzz.core
-  (use [bizzbuzz.bb])
+  (use [bizzbuzz.web])
   (:gen-class))
 
 (defn -main [& args]
-  (println (bb 100)))
+  (run-web))

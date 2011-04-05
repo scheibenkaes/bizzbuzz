@@ -3,4 +3,6 @@
   :dependencies [[org.clojure/clojure "1.2.1"]
                  [compojure "0.6.2"]
                  [hiccup "0.3.4"]]
-  :main bizzbuzz.core)
+  :dev-dependencies [[lein-ring "0.4.0"]]
+  :main bizzbuzz.core
+  :ring {:handler bizzbuzz.web/run-web})
